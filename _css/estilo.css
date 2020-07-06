@@ -38,7 +38,7 @@ div#interface {
 
 header#cabecalho img#icone {
     position: absolute;
-    left: 870px;
+    left: 1080px;
     top: 70px;
 }
 
@@ -106,7 +106,7 @@ nav#menu {
      text-transform: uppercase;
      position: absolute;
      top: -20px;
-     left: 400px;
+     left: 630px;
  }
 
  nav#menu li {
