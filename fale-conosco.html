@@ -5,8 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tudo sobre Google Glass</title>
         <link rel="stylesheet" href="_css/estilo.css"/>
+        <link rel="stylesheet" href="_css/form.css"/>
     </head>
     <script src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
     <body>
         <div id="interface">
             <header id="cabecalho">
@@ -39,7 +47,7 @@
                         </hgroup>
                     </header>
 
-                        <form method="POST" id="fContato" action="mailto:edemilsonbr@gmail.com">
+                        <form method="POST" id="fContato" action="mailto:edemilsonbr@gmail.com" oninput="calc_total();">
                             <fieldset id="usuario">
                                 <legend>Identificação do Usuário</legend>
                                     <p>
@@ -54,7 +62,7 @@
                                         <label for="cEmail">E-mail:</label>
                                         <input type="email" name="tEmail" id="cEmail" size="30" maxlength="40" placeholder="Digite email válido"/>
                                     </p>
-                                    <fieldset>
+                                    <fieldset id="sexo">
                                         <legend>
                                             Sexo
                                         </legend>
@@ -126,13 +134,14 @@
                                         <label for="cMsg">
                                             Mensagem:
                                         </label>
-                                        <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+                                        <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
                                     </p>
                            </fieldset>
     
                             <fieldset id="pedido">
                                 <legend>Quero um Google Glass</legend>
                                     <p>
+                                        <input type="checkbox" name="tPed" id="cPed" checked>
                                         <label for="cPed">
                                             Gostaria de adquirir um Google Glass quando disponível
                                         </label>
@@ -141,21 +150,26 @@
                                         <label for="cCor">
                                             Cor:
                                         </label>
+                                        <input type="color" name="tCor" id="cCor" value="#0000FF">
                                     </p>
                                     <p>
                                         <label for="cQtd">
                                             Quantidade:
                                         </label>
+                                        <input type="number" name="tQtd" id="cQtd" min="0" max="10" value="0">
                                     </p>
                                     <p>
                                         <label for="cTot">
                                             Preço Total: R$
                                         </label>
+                                        <input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly>
                                     </p>
                             </fieldset>
-    
-    
-                            [BOTÃO ENVIAR]
+                            <!-- Botão no formulário - Tradicional -->
+                            <!-- <input type="submit" value="Enviar"/> -->
+                            <!-- Botão no formulário com imagem -->
+                            <input type="image" name="tEnviar" id="cEnviar" src="_imagens/botao-enviar.png"/>
+                           
                         </form>
 
                 </article>
