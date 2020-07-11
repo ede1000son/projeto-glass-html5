@@ -39,40 +39,119 @@
                         </hgroup>
                     </header>
 
-                        <form>
+                        <form method="POST" id="fContato" action="mailto:edemilsonbr@gmail.com">
                             <fieldset id="usuario">
                                 <legend>Identificação do Usuário</legend>
-                                    <p>Nome: <input type="text" name="tNome" id="cNome" size="30" maxlength="30" placeholder="Nome Completo"/></p>
-                                    <p>Senha:<input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos"/></p>
-                                    <p>E-mail:<input type="email" name="tEmail" id="cEmail" size="30" maxlength="40" placeholder="Digite email válido"/></p>
+                                    <p>
+                                        <label for="cNome">Nome:</label>
+                                        <input type="text" name="tNome" id="cNome" size="30" maxlength="30" placeholder="Nome Completo"/>
+                                    </p>
+                                    <p>
+                                        <label for="cSenha">Senha:</label>
+                                        <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos"/>
+                                    </p>
+                                    <p>
+                                        <label for="cEmail">E-mail:</label>
+                                        <input type="email" name="tEmail" id="cEmail" size="30" maxlength="40" placeholder="Digite email válido"/>
+                                    </p>
                                     <fieldset>
-                                        <legend>Sexo</legend>
-                                            <input type="radio" name="tSexo" id="cMasc" checked/> <label for="cMasc">Masculino</label><br/>
-                                            <input type="radio" name="tSexo" id="cFem"/> <label for="cFem">Feminino</label>
+                                        <legend>
+                                            Sexo
+                                        </legend>
+                                            <input type="radio" name="tSexo" id="cMasc" checked/>
+                                            <label for="cMasc">
+                                                Masculino
+                                            </label><br/>
+                                            <input type="radio" name="tSexo" id="cFem"/>
+                                            <label for="cFem">
+                                                Feminino
+                                            </label>
                                     </fieldset>
-                                    <p>Data de Nascimento:<input type="date" name="tNasc" id="cNasc"/></p>
+                                    <p><label for="cNasc">
+                                            Data de Nascimento:
+                                       </label>
+                                       <input type="date" name="tNasc" id="cNasc"/>
+                                    </p>
                             </fieldset>
     
                             <fieldset id="endereco">
                                 <legend>Endereço do Usuário</legend>
-                                    <p>Logradouro:<input type="text" name="tRua" id="cRua" size="30" maxlength="80" placeholder="Rua, Av., Travessa, ..."/></p>
-                                    <p>Número:<input type="number" name="tNum" id="cNum" min="0" max="99999"/></p>
-                                    Estado:
-                                    Cidade:
+                                    <p>
+                                        <label for="cRua">Logradouro:</label>
+                                        <input type="text" name="tRua" id="cRua" size="30" maxlength="80" placeholder="Rua, Av., Travessa, ..."/>
+                                    </p>
+                                    <p>
+                                        <label for="cNum">Número:</label>
+                                        <input type="number" name="tNum" id="cNum" min="0" max="99999"/>
+                                    </p>
+                                    <p>
+                                        <label for="cEst">
+                                            Estado:
+                                        </label>
+                                        <select name="tEst" id="cEst">
+                                            <optgroup label="Região Sudeste">
+                                                <option value="mg">Minas Gerais</option>
+                                                <option value="rj">Rio de Janeiro</option>
+                                                <option value="sp">São Paulo</option>
+                                            </optgroup>
+                                            <optgroup label="Região Sul">
+                                                <option value="pr">Paraná</option>
+                                                <option selected value="sc">Santa Catarina</option>
+                                                <option value="rs">Rio Grande do Sul</option>
+                                            </optgroup>
+                                        </select>
+                                    </p>
+                                    <p>
+                                        <label for="cCid">
+                                            Cidade:
+                                        </label>
+                                        <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua Cidade" list="cidades">
+                                        <datalist id="cidades">
+                                            <option value="Capivari de Baixo"></option>
+                                            <option value="Florianópolis"></option>
+                                            <option value="Tubarão"></option>
+                                        </datalist>
+                                    </p>
                             </fieldset>
     
                            <fieldset id="mensagem">
                                 <legend>Mensagem do Usuário</legend>
-                                    Grau de Urgência:
-                                    Mensagem:
+                                    <p>
+                                        <label for="cUrg">
+                                            Grau de Urgência:
+                                        </label>
+                                        Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Máx
+                                    </p>
+                                    <p>
+                                        <label for="cMsg">
+                                            Mensagem:
+                                        </label>
+                                        <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+                                    </p>
                            </fieldset>
     
                             <fieldset id="pedido">
                                 <legend>Quero um Google Glass</legend>
-                                    Gostaria de adquirir um Google Glass quando disponível
-                                    Cor:
-                                    Quantidade:
-                                    Preço Total: R$
+                                    <p>
+                                        <label for="cPed">
+                                            Gostaria de adquirir um Google Glass quando disponível
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label for="cCor">
+                                            Cor:
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label for="cQtd">
+                                            Quantidade:
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label for="cTot">
+                                            Preço Total: R$
+                                        </label>
+                                    </p>
                             </fieldset>
     
     
